@@ -129,7 +129,7 @@ body {
 }
 
 /* Content Padding */
-div[class*=content] {
+[class*=content] {
   padding: 20px;
 }
 
@@ -358,4 +358,56 @@ div[class*=content] {
 .signup-field.birth div > *:focus::placeholder,
 .signup-field.phone div input:focus::placeholder {
   visibility: hidden;
+}
+
+/***** Category html *****/
+.category-content {
+  padding: 0;
+}
+
+.category-accordion {
+  font-size: 16px;
+}
+
+.category-accordion .title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: var(--crimson);
+  font-weight: 400;
+  position: relative;
+  border-bottom: 1px solid var(--gloudy-gray);
+  padding: 0 20px;
+}
+
+.category-accordion .title:after {
+  content: '\F282';
+  font-family: bootstrap-icons;
+  background-color: var(--fuschia);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 13px;
+  position: absolute;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.category-accordion .title.active:after {
+  background-color: transparent;
+  transform: rotateX(180deg);
+}
+
+.category-accordion .detail {
+  display: none;
+  line-height: 2em;
+  padding: 7px 0;
+  background-color: var(--snow);
+  padding: 0 20px;
+}
+
+.category-accordion .detail a {
+  display: block;
+  padding: 2px 0;
 }
