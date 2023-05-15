@@ -42,8 +42,8 @@ body {
   height: 65px;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 375px;
   /* ^ 작업완료 후 100% */
   background-color: #fff;
@@ -71,6 +71,63 @@ body {
   font-size: 13px;
 }
 
+/* Main Header CSS */
+.main-header {
+  height: 80px;
+  background-color: var(--crimson);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-back {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  flex: 1;
+}
+
+.main-header .logo {
+  color: #fff;
+  margin: 0;
+  margin-right: 20px;
+  font-size: 26px;
+  flex: 6;
+  text-align: center;
+}
+
+.user-alarm {
+  flex: 1;
+  font-size: 22px;
+  color: #fff;
+}
+.user-alarm span {
+  position: relative;
+}
+
+.user-alarm span em {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--royalblue);
+  border-radius: 50%;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-alarm span em::before {
+  content: attr(data-count);
+  font-style: normal;
+  font-size: 10px;
+  font-family: var(--primary-en);
+}
+
+
+
 /***** Preloading html *****/
 .preloading {
   height: 750px;
@@ -88,9 +145,10 @@ body {
   left: 30px;
 }
 
-.logo {
+.heading-preloading .logo {
   font-size: 32px;
   color: var(--crimson);
+  
 }
 
 .slogan span {
