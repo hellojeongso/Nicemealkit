@@ -104,11 +104,13 @@ body {
   color: #fff;
 }
 
-.user-alarm span {
+.user-alarm span,
+.cart-alarm b {
   position: relative;
 }
 
-.user-alarm span em {
+.user-alarm span em,
+.cart-alarm b em {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -121,7 +123,14 @@ body {
   align-items: center;
 }
 
-.user-alarm span em::before {
+.cart-alarm b em {
+  color: #fff;
+  top:0;
+  right: 20px;
+}
+
+.user-alarm span em::before,
+.cart-alarm b em:before {
   content: attr(data-count);
   font-style: normal;
   font-size: 10px;
