@@ -406,7 +406,13 @@ body {
   padding: 0 20px;
 }
 
-.category-accordion .title:after {
+
+.category-accordion .title {
+  border: 1px solid black;
+}
+
+.user-shortcut a:after,
+.category-accordion .title:after{
   content: '\F282';
   font-family: bootstrap-icons;
   background-color: var(--fuschia);
@@ -504,4 +510,181 @@ body {
   content: counter(rank);
   margin-right: 10px;
   font-weight: 400;
+}
+
+/* #### Mypage html #### */
+
+.mypage-content {
+  padding: 0;
+}
+.user-info {
+  padding: 20px;
+  display: flex;
+  gap: 5px;
+}
+
+.user-avatar {
+  flex: 1;
+}
+
+.user-avatar img {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.user-summary {
+  flex: 4;
+}
+
+.rating b {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--limegreen);
+}
+
+.rating span {
+  font-weight: 400;
+}
+
+.btn-setting {
+  float: right;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: var(--silver-gray);
+}
+
+.nickname {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.point-coupon {
+  display: flex;
+  gap: 5px;
+}
+
+.point-coupon div {
+  background-color: var(--gloudy-gray);
+  border-radius: 20px;
+  text-align: center;
+  padding: 2px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.point-coupon div span {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.point-coupon div span:last-child {
+  color: var(--crimson);
+}
+
+.point-coupon .point {
+  flex: 3;
+}
+
+.point-coupon .coupon {
+  flex: 1;
+}
+
+.delivering {
+  padding: 20px;
+}
+
+.delivering h2 {
+  font-size: 16px;
+}
+
+.delivering-items {
+  border: 1px solid var(--gloudy-gray);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.delivering-item {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--gloudy-gray);
+  padding: 10px 0;
+}
+
+.delivering-item:first-child {
+  padding-top: 0;
+}
+
+.delivering-item:last-child {
+  border: none; 
+  padding-bottom: 0;
+}
+
+.delivering-item .thum {
+  width: 60px;
+  height: 60px;
+}
+
+.delivering-item .thum img {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
+}
+
+.delivering-item .desc span {
+  font-weight: normal;
+}
+
+.delivering-item .desc b {
+  display: block;
+  color: var(--limegreen);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.mypage .banner a img {
+  width: 100%;
+}
+
+.user-shortcut {
+  position: relative;
+}
+
+.user-shortcut a {
+  display: block;
+  border-bottom: 1px solid var(--gloudy-gray);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 15px;
+}
+
+.user-shortcut a:after {
+  transform: rotate(270deg);
+  background-color: transparent;
+  right: 10px;
+}
+
+.user-shortcut a:last-child {
+  border: none;
+}
+
+.user-shortcut a span {
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.user-shortcut a .bi {
+  width: 25px;
+  text-align: center;
+}
+
+.user-shortcut a:nth-child(5) .bi {
+  font-size: 20px;
+}
+
+.btn-signout {
+  background-color: var(--gainsboro);
 }
