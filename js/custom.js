@@ -25,4 +25,14 @@ $(function(){
     $('.search-recent .item').hide()
   })
 
+  // Cart Items
+  // 전체 삭제
+  $('.cart-content .btn-all-clear').click(function(){
+    $('.cart-item').hide()
+  })
+
+  // 선택 삭제
+  $('.cart-content .btn-clear').click(function(){
+    $(this).parent().parent().hide()
+  })
 })
