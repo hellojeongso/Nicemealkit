@@ -35,4 +35,31 @@ $(function(){
   $('.cart-content .btn-clear').click(function(){
     $(this).parent().parent().hide()
   })
+
+  // Front Slider
+  $('.front-slider').slick({
+    slidesToShow: 1,
+    dots: false,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  });
+
+  // Goods Suggestion Slider
+  $('.goods-suggestion-items').slick({
+    slidesToShow: 3,
+    dots: false,
+    arrows: true,
+    slidesToScroll: 2
+  })
+
+  // Wish
+  $('.wish').click(function(){
+    $(this).toggleClass('active')
+  })
+
+  // Front Footer
+  $('.btn-view-more').click(function(){
+    $('.company-info-more').show()
+  })
 })
