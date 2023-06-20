@@ -18,8 +18,14 @@ body {
 /***** Common CSS *****/
 /* Layout CSS */
 .container {
-  width: 375px;
-  /* ^임의^ 작업 완료 후 width: 100%; */  
+  width: 100%;
+  position: relative;
+}
+
+.preloading,
+.signin,
+.signup {
+  height: 100vh;
 }
 
 /* Logo CSS */
@@ -42,10 +48,9 @@ body {
   height: 65px;
   display: flex;
   justify-content: space-between;
-  /* position: absolute;
-  bottom: 0; */
-  width: 375px;
-  /* ^ 작업완료 후 100% */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: #fff;
   border-top: 1px solid var(--gloudy-gray);
 }
@@ -106,7 +111,11 @@ body {
 
 .user-alarm span,
 .cart-alarm b {
+  /* border: 1px solid black; */
   position: relative;
+  width: 30px;
+  margin: auto;
+
 }
 
 .user-alarm span em,
@@ -126,7 +135,7 @@ body {
 .cart-alarm b em {
   color: #fff;
   top:0;
-  right: 20px;
+  right: -2px;
 }
 
 .user-alarm span em::before,
@@ -135,6 +144,44 @@ body {
   font-style: normal;
   font-size: 10px;
   font-family: var(--primary-en);
+}
+
+
+/* Goods Detail Header CSS */
+.goods-detail-header {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods-detail-header .back-logo {
+  display: flex;
+  align-items: center;
+}
+
+.goods-detail-header .back-logo .logo {
+  margin: 0;
+  font-size: 24px;
+}
+.goods-detail-header .back-logo .btn-back {
+  color: #000;
+}
+
+.goods-detail-header .navigator {
+  margin-right: 10px;
+}
+
+.goods-detail-header .navigator button {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  color: var(--dark-gray);
+}
+
+.goods-detail-header .navigator b em {
+  top: 3px;
+  right: -4px;
 }
 
 /* Content Padding */
@@ -178,11 +225,33 @@ body {
   background-color: var(--crimson);
 }
 
-/***** Preloading html *****/
-.preloading {
-  height: 750px;
-  /* ^임의^ 작업 완료 후 height: 100vh; */
+.info-badge {
+  font-size: 12px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  padding: 1px 7px;
 }
+
+.info-badge.arrival {
+  border-color: var(--crimson);
+  color: var(--crimson);
+}
+
+/* Button Share */
+.btn-share {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+}
+
+
+/***** Preloading html *****/
 .preloading-inner {
   position: relative;
   height: inherit;
@@ -928,8 +997,9 @@ body {
 
 /* Front Slider */
 .front-slider {
-  height: 275px;
+  /* height: 275px; */
 }
+
 .front-slider a img {
   width: 100%;
 }
@@ -1214,4 +1284,256 @@ input[id=food-type-tab6]:checked ~ .food-type-tabs .tab6 {
 
 .company-info-more span {
   display: block;
+}
+
+/* #### Goods Detail html #### */
+.goods-detail-content {
+  padding: 0;
+}
+
+/* Goods Slider */
+.goods-detail-slider-outer {
+  position: relative;
+}
+
+.goods-detail-slider a {
+  width: 100%;
+  height: 350px;
+}
+.goods-detail-slider a img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+/* Goods Slider Custom CSS */
+.goods-detail-slider .slick-dots {
+  bottom: 15px;
+}
+.goods-detail-slider .slick-dots li button:before {
+  color: #fff;
+  opacity: 1;
+}
+.goods-detail-slider .slick-dots li.slick-active button:before {
+  color: var(--crimson);
+}
+.goods-detail-slider .slick-dots li {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+}
+.goods-detail-slider.slick-dotted.slick-slider {
+  margin-bottom: -5px;
+  /* dot를 쓰고 공백을 없애기 위해 */
+}
+
+/* Goods Info */
+.goods-info {
+  padding: 20px;
+}
+
+.goods-rating {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stars .bi {
+  color: var(--gold);
+}
+
+.stars em {
+  font-style: normal;
+  font-size: 14px;
+  color: var(--royalblue);
+}
+
+.goods-info .goods-title h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.goods-info .goods-title div {
+  justify-content: flex-start;
+  font-size: 20px;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.goods-info .goods-title div span {
+  margin-right: auto; 
+}
+
+.goods-delivery-info {
+  display: flex;
+  margin: 25px 0;
+  border-top: 1px solid var(--gloudy-gray);
+  border-bottom: 1px solid var(--gloudy-gray);
+  padding: 20px 0;
+  gap: 10px;
+}
+
+.goods-delivery-info div span {
+  display: block;
+}
+
+.goods-delivery-info div span em {
+  font-style: normal;
+  color: var(--silver-gray);
+}
+
+/* Goods Detail */
+.goods-detail img {
+  width: 100%;
+}
+
+.goods-detail p {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Goods Accordion */
+.goods-accordion .title {
+  border-bottom: 1px solid var(--gloudy-gray);
+  height: 40px;
+  font-weight: normal;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.goods-accordion .title::after {
+  content: '\F64D';
+  font-family: bootstrap-icons;
+  position: absolute;
+  right: 20px;
+}
+
+.goods-accordion .detail {
+  display: none;
+}
+
+.goods-accordion .title.active {
+  color: var(--crimson);
+}
+
+.goods-accordion .title.active::after {
+  content: '\F63B';
+}
+
+/* comment */
+.comment {
+  padding: 20px;
+}
+
+.comment span {
+  display: block;
+  padding: 3px 0;
+  color: var(--dark-gray);
+}
+
+.comment span:last-child {
+  font-weight: normal;
+}
+/* Goods Order Info */
+.goods-order-info {
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  /* overlay를 위해  */
+}
+
+.goods-order-choice {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.goods-order-choice .wish {
+  font-size: 30px;
+  flex: 1;
+}
+
+.btn-order-choice {
+  background-color: var(--royalblue);
+  flex: 6;
+}
+
+.goods-order-final {
+  position: relative;
+  display: none;
+}
+
+.goods-order-final-info {
+}
+
+.btn-fold {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  position: absolute;
+  top: -20px;
+}
+
+.goods-order-final-info .goods-title {
+    margin: 20px 0;
+}
+
+.goods-order-final-info .goods-title h3 {
+  font-size: 16px;
+}
+
+.goods-order-final-info .goods-title > div {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.payment-benefit {
+  font-size: 13px;
+  margin: 20px 0;
+}
+
+.payment-benefit b {
+  font-weight: 400;
+}
+
+.payment-benefit p {
+  color: var(--light-gray);
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.payment-benefit p a {
+  text-decoration: underline;
+}
+
+.goods-order-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-cart {
+  border: 1px solid var(--royalblue);
+  color: var(--royalblue);
+  background-color: #fff;
+}
+
+.btn-now-order {
+  background-color: var(--royalblue);
+}
+
+.overlay-fold {
+  /* background-color: #000; */
+  position: fixed;
+  width: 375px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
 }
