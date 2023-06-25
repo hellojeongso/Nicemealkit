@@ -44,4 +44,6 @@
   --fuschia: #fcddec;
   --light-beige: #F2E8D5;
 
+  /* For Big Size Mobile & Tablet Device */
+  --slide-basis: 375px;
 }

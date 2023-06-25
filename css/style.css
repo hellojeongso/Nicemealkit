@@ -77,6 +77,14 @@ body {
   font-size: 13px;
 }
 
+.category .gnb a:nth-child(1),
+.search .gnb a:nth-child(2),
+.front .gnb a:nth-child(3),
+.mypage .gnb a:nth-child(4),
+.cart .gnb a:nth-child(5) {
+  color: var(--crimson);
+}
+
 /* Main Header CSS */
 .main-header {
   height: 80px;
@@ -187,6 +195,8 @@ body {
 /* Content Padding */
 [class*=content] {
   padding: 20px;
+  margin-bottom: 65px;
+  /* gnb가 fixe되면서 content가 짤리는 현상 방지 */
 }
 
 /* Clear Buttons */
@@ -1047,14 +1057,16 @@ body {
 }
 
 .goods-suggestion-items {
-  width: 430px;
-  /* 컨테이너보다 더 넓게 */
+  width: calc(var(--slide-basis) * 1.15);
+  /* 컨테이너보다 더 넓게, 430px */
   margin-bottom: 15px;
 } 
 
 .goods-suggestion-item .thum {
-  width: 135px;
-  height: 180px;
+  width: calc(var(--slide-basis) * 0.36);
+  /* 135px */
+  height: calc(var(--slide-basis) * 0.48);
+  /* 180px */
 }
 .goods-suggestion-item .thum img {
   width: inherit;
@@ -1536,4 +1548,18 @@ input[id=food-type-tab6]:checked ~ .food-type-tabs .tab6 {
   top: 0;
   left: 0;
   display: none;
+}
+
+
+/* For Big Size Mobile & Tablet Device */
+@media(min-width: 400px) {
+  :root {
+    --slide-basis:420px;
+  }
+}
+
+@media(min-width:768px) and (max-width:1024px) {
+  :root {
+    --slide-basis:820px;
+  }
 }
