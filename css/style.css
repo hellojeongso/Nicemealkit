@@ -117,8 +117,7 @@ body {
   color: #fff;
 }
 
-.user-alarm span,
-.cart-alarm b {
+.user-alarm span {
   /* border: 1px solid black; */
   position: relative;
   width: 30px;
@@ -126,24 +125,11 @@ body {
 
 }
 
-.user-alarm span em,
-.cart-alarm b em {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: var(--royalblue);
-  border-radius: 50%;
-  right: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .cart-alarm b em {
   color: #fff;
   top:0;
-  right: -2px;
+  top: 6px;
+  right: 14px;
 }
 
 .user-alarm span em::before,
@@ -170,21 +156,22 @@ body {
 
 .goods-detail-header .back-logo .logo {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
 }
 .goods-detail-header .back-logo .btn-back {
   color: #000;
 }
 
-.goods-detail-header .navigator {
-  margin-right: 10px;
-}
-
 .goods-detail-header .navigator button {
   border: none;
   background-color: transparent;
-  font-size: 24px;
+  font-size: 20px;
   color: var(--dark-gray);
+  margin: 0;
+}
+
+.btn-search, .btn-home, .cart-alarm {
+  padding: 0px 4px;
 }
 
 .goods-detail-header .navigator b em {
@@ -504,11 +491,6 @@ body {
   padding: 0 20px;
 }
 
-
-.category-accordion .title {
-  border: 1px solid black;
-}
-
 .user-shortcut a:after,
 .category-accordion .title:after{
   content: '\F282';
@@ -552,6 +534,7 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   background: var(--snow) url('/images/icon-search.svg') no-repeat center left 15px;
   padding-left: 40px;
+  font-size: 15px;
 }
 
 .search-recent {
@@ -666,7 +649,7 @@ body {
   background-color: var(--gloudy-gray);
   border-radius: 20px;
   text-align: center;
-  padding: 2px 15px;
+  padding: 3px 15px;
   display: flex;
   justify-content: space-between;
 }
@@ -694,6 +677,7 @@ body {
 
 .delivering h2 {
   font-size: 16px;
+  color: var(--crimson);
 }
 
 .delivering-items {
@@ -817,6 +801,10 @@ body {
   gap: 5px;
 }
 
+.cart-item-title span {
+  font-weight: normal;
+}
+
 .cart-item-title .btn-clear {
   transform: translate(8px, -5px); 
   font-size: 20px;
@@ -921,6 +909,7 @@ body {
   border: none;
   background-color: transparent;
   padding-left: 16px;
+  color: var(--dark-black);
 }
 
 .cart-items-summary {
